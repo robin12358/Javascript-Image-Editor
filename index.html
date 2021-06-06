@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap2.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav navbar navbar-dark bg-info mb-5">
+        <div class="container">
+            <a href="#" class="navbar-brand">Js Image Editor</a>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 m-auto">
+                <div class="custom-file mb-3">
+                    <input type="file" id="upload-file" class="custom-file-input">
+                    <label for="upload-file" class="custom-file-upload">Choose Image</label>
+                </div>
+
+                <canvas id="canvas"></canvas>
+                <h4 class="text-center my3">Filter</h4>
+
+                <div class="row my-3">
+                    <div class="col-md-4">
+                        <label class="form-label" for="customRange1">Brightness</label><br>
+                        <label class="form-label" for="customRange1" id="brightness-value">Value:0</label>
+                        <div class="range">
+                            <input type="range" class="form-range brightrange" step="1" min="-50" max="50" value="0"
+                                id="brightrange" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="customRange1">contrast</label><br>
+                        <label class="form-label" for="customRange1" id="contrast-value">Value:0</label>
+                        <div class="range">
+                            <input type="range" class="form-range contrast" step="1" min="-50" max="50" value="0"
+                                id="contrastrange" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="customRange1">gamma</label><br>
+                        <label class="form-label" for="customRange1" id="gamma-value">Value:1</label>
+                        <div class="range">
+                            <input type="range" class="form-range gamma" step="1" min="1" max="100" value="1"
+                                id="gammarange" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="customRange1">saturation</label><br>
+                        <label class="form-label" for="customRange1" id="saturation-value">Value:1</label>
+                        <div class="range">
+                            <input type="range" class="form-range saturation" step="1" min="1" max="100" value="1"
+                                id="saturationrange" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="customRange1">Sepia</label><br>
+                        <label class="form-label" for="customRange1" id="sepia-value">Value:1</label>
+                        <div class="range">
+                            <input type="range" class="form-range sepia" step="1" min="1" max="50" value="1"
+                                id="sepiarange" />
+                        </div>
+                    </div>
+
+                </div>
+                <h4 class="text-center my-3">Effects</h4>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn vintage-add btn btn-dark btn-block">Vintage</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn lomo-add btn btn-dark btn-block">Lomo</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn clarity-add btn btn-dark btn-block">Clarity</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn sincity-add btn btn-dark btn-block">Sin City</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <button class="filter-btn crossprocess-add btn btn-dark btn-block">Cross Process</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn pinhole-add btn btn-dark btn-block">Pinhole</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn nostalgia-add btn btn-dark btn-block">Nostalgia]</button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class="filter-btn hermajesty-add btn btn-dark btn-block">Her Majesty</button>
+                    </div>
+                </div>
+
+                <div class="row my-5">
+                    <div class="col-md-6">
+                        <button id="download-btn" class="btn btn-primary btn-block">Download Image</button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button id="revert-btn" class="btn btn-danger btn-block">Remove Effect</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="camanjs.js"></script>
+    <script src="myjs.js"></script>
+
+</html>
