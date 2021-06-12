@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Editor</title>
     <link rel="stylesheet" href="bootstrap2.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -26,47 +26,64 @@
                 </div>
 
                 <canvas id="canvas"></canvas>
-                <h4 class="text-center my3">Filter</h4>
-
                 <div class="row my-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-center">Effect Layer</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group" id='effect-list'>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-primary" disabled>Action</button>
+                                    Effect/Filter
+                                    <span class="badge badge-primary badge-pill">Count</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="text-center my-3">Filter</h4>
+
+                <div class="row my-3" id="effects">
                     <div class="col-md-4">
                         <label class="form-label" for="customRange1">Brightness</label><br>
-                        <label class="form-label" for="customRange1" id="brightness-value">Value:0</label>
+                        <label class="form-label" for="customRange1" id="brightness_value">Value:0</label>
                         <div class="range">
-                            <input type="range" class="form-range brightrange" step="1" min="-50" max="50" value="0"
-                                id="brightrange" />
+                            <input type="range" class="form-range " step="1" min="-50" max="50" value="0"
+                                onchange="layerbild('brightness')" id="brightnessrange" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" for="customRange1">contrast</label><br>
-                        <label class="form-label" for="customRange1" id="contrast-value">Value:0</label>
+                        <label class="form-label" for="customRange1" id="contrast_value">Value:0</label>
                         <div class="range">
                             <input type="range" class="form-range contrast" step="1" min="-50" max="50" value="0"
-                                id="contrastrange" />
+                                onchange="layerbild('contrast')" id="contrastrange" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" for="customRange1">gamma</label><br>
-                        <label class="form-label" for="customRange1" id="gamma-value">Value:1</label>
+                        <label class="form-label" for="customRange1" id="gamma_value">Value:1</label>
                         <div class="range">
                             <input type="range" class="form-range gamma" step="1" min="1" max="100" value="1"
-                                id="gammarange" />
+                                onchange="layerbildB('gamma')" id="gammarange" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" for="customRange1">saturation</label><br>
-                        <label class="form-label" for="customRange1" id="saturation-value">Value:1</label>
+                        <label class="form-label" for="customRange1" id="saturation_value">Value:1</label>
                         <div class="range">
                             <input type="range" class="form-range saturation" step="1" min="1" max="100" value="1"
-                                id="saturationrange" />
+                                onchange="layerbildB('saturation')" id="saturationrange" />
                         </div>
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" for="customRange1">Sepia</label><br>
-                        <label class="form-label" for="customRange1" id="sepia-value">Value:1</label>
+                        <label class="form-label" for="customRange1" id="sepia_value">Value:1</label>
                         <div class="range">
                             <input type="range" class="form-range sepia" step="1" min="1" max="50" value="1"
-                                id="sepiarange" />
+                                onchange="layerbildB('sepia')" id="sepiarange" />
                         </div>
                     </div>
 
